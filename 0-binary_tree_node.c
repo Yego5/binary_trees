@@ -1,40 +1,39 @@
-#include "my_binary_converter.h"
+#include "main.h"
 #include <stdlib.h>
-
 /**
- * my_binary_to_uint - Convert a binary string to an unsigned integer
- * @binary_str: The input binary string
+ * binary_to_uint - Convert a string representing a binary number to an
+ * unsigned int decimal value
+ * @b: The string containing the binary
  *
- * Return: The decimal value of the binary string, or 0 if invalid input
+ * Return: 0 if string contains something other than 1 or 0, or
+ * if the string is NULL, return the decimal value on success
  */
-unsigned int my_binary_to_uint(const char *binary_str)
+unsigned int binary_to_uint(const char *b)
 {
-    unsigned int index, length;
-    unsigned int decimal_value;
+	unsigned int i, len;
+	unsigned int decval;
 
-    index = length = decimal_value = 0;
+	i = len = decval = 0;
 
-    if (binary_str == NULL)
-        return (0);
+	if (b == NULL)
+		return (0);
 
-    // Check if the string contains only '0' and '1' characters
-    while (binary_str[length] != '\0')
-    {
-        if (binary_str[length] == '0' || binary_str[length] == '1')
-            length++;
-        else
-            return (0);
-    }
+	while (b[len] != '\0')
+	{
 
-    // Convert the binary string to an unsigned integer
-    while (index < length)
-    {
-        decimal_value = decimal_value << 1;
-        if (binary_str[index] == '1')
-            decimal_value += 1;
-        index++;
-    }
+		if (b[len] == '0' || b[len] == '1')
+			len++;
 
-    return (decimal_value);
+		else
+			return (0);
+	}
+	while (i < len)
+	{
+		decval = decval << 1;
+		if (b[i] == '1')
+			decval += 1;
+		i++;
+	}
+	return (decval);
 }
 //@yego
