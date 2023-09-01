@@ -89,4 +89,3 @@ int btih_helper(const binary_tree_t *tree);
 void sata_helper(avl_t **root, int *array, size_t lo, size_t hi);
 
 #endif
-//@shadrack
