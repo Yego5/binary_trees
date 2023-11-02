@@ -1,4 +1,5 @@
 0x1D. C - Binary trees
+REDO
 
 Resources
 Read or watch:
